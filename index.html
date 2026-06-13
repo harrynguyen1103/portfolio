@@ -236,6 +236,68 @@
     color: var(--moss-deep);
   }
 
+  /* ===== RESEARCH DIRECTION ===== */
+  .research-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .research-card{
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(58, 74, 44, 0.08);
+    border: 1px solid var(--line);
+  }
+
+  .research-card h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--moss-darker);
+    margin-bottom: 12px;
+  }
+
+  .research-card ul{
+    list-style: none;
+    font-size: 0.92rem;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .research-card li{
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .research-card li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--moss-deep);
+  }
+
+  .research-axis{
+    background: linear-gradient(135deg, var(--moss-deep), var(--moss-darker));
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 24px 32px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 860px){
+    .research-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* ===== SKILLS ===== */
   .skills-grid{
     display: grid;
@@ -572,6 +634,7 @@
         <li><a href="#achievements">Thành tích</a></li>
         <li><a href="#about">Giới thiệu</a></li>
         <li><a href="#projects">Dự án</a></li>
+        <li><a href="#research-direction">Định hướng</a></li>
         <li><a href="#skills">Kỹ năng</a></li>
         <li><a href="#contact">Liên hệ</a></li>
       </ul>
@@ -609,12 +672,15 @@
             <li>Khám và chẩn đoán bệnh vùng miệng-mặt</li>
             <li>Bệnh lý miệng-hàm mặt</li>
             <li>Giải phẫu bệnh vùng miệng</li>
+            <li>Ứng dụng trí tuệ nhân tạo và học sâu trong chẩn đoán bệnh lý miệng</li>
           </ul>
         </div>
         <div class="achievement-card">
-          <div class="achievement-number"><span class="count-up" data-target="9" data-suffix="">0</span></div>
+          <div class="achievement-number"><span class="count-up" data-target="10" data-suffix="">0</span></div>
           <div class="achievement-label">đầu sách / giáo trình đã xuất bản (Nhà xuất bản Y học), với vai trò đồng tác giả hoặc biên soạn</div>
           <ul class="achievement-booklist">
+            <li>Thuật ngữ Răng Hàm Mặt Việt-Anh (2026)</li>
+            <li>Các vấn đề thiết yếu trong chương trình đào tạo bác sĩ răng hàm mặt (2026)</li>
             <li>Sinh học phân tử Miệng và Hàm mặt – Tập 1 (2025)</li>
             <li>Sinh học phân tử Miệng và Hàm mặt – Tập 2 (2025)</li>
             <li>Trợ thủ nha khoa (2024)</li>
@@ -622,13 +688,28 @@
             <li>Chăm sóc răng miệng cho gia đình (2024)</li>
             <li>Mô phỏng lâm sàng khám và chẩn đoán vùng miệng (2023)</li>
             <li>Công thái học và hợp lý lao động trong thực hành răng hàm mặt (2023)</li>
-            <li>Thuật ngữ Răng Hàm Mặt Việt-Anh (2026)</li>
-            <li>Các vấn đề thiết yếu trong chương trình đào tạo bác sĩ răng hàm mặt (2026)</li>
+            <li>Chương "Oral Cancer" – The Science of Sea Salt, Taylor Specialty Books (2022)</li>
           </ul>
         </div>
         <div class="achievement-card">
           <div class="achievement-number"><span class="count-up" data-target="11" data-suffix="+">0</span></div>
           <div class="achievement-label">bài báo khoa học có chỉ số DOI, công bố trên các tạp chí trong nước &amp; quốc tế</div>
+          <ul class="achievement-booklist">
+            <li>Combination of jaw exercise and stabilization splint therapy for TMD with severely limited mouth opening: a case report (2025), Vietnam Dental Journal</li>
+            <li>Value of ultrasound-guided fine needle aspiration in the diagnosis of parotid gland tumors (2025), Vietnam Medical Journal, DOI: 10.51298/vmj.v547i1.12904</li>
+            <li>Evaluating the effectiveness of improving prescription by using the antimicrobial prescribing self-audit tool in dentistry (2025), Journal of Community Medicine, DOI: 10.52163/yhc.v66iCD1.1978</li>
+            <li>Deep-learning application for identifying histological features of epithelial dysplasia of tongue (2022), J. Oral Maxillofac. Surg. Med. Pathol., DOI: 10.1016/j.ajoms.2021.12.008</li>
+            <li>Antibiotics prescribed by dentists in Ho Chi Minh City, Vietnam (2022), Technology Development Journal – Health Sciences, DOI: 10.32508/stdjhs.v3i2.541</li>
+            <li>Stepwise approach in the management of oral lichen planus (2021), Science &amp; Technology Development Journal – Health Sciences, DOI: 10.32508/stdjhs.v2i2.471</li>
+            <li>Updating recommendations for prescribing antibiotics in dental practice (2021), Science &amp; Technology Development Journal – Health Sciences, DOI: 10.32508/stdjhs.v2i1.460</li>
+            <li>Autofluorescence features of oral mucosa lesions associated with betel chewing (2018), Tạp chí Y học TP.HCM, 22(2):90-95</li>
+            <li>Evaluation of efficacy of tissue autofluorescence imaging in the diagnosis of oral cancer (2017), Journal of Oncology Vietnam, Issue 6, p.6-13</li>
+            <li>Detection of oral mucosa lesions among high-risk groups in Ho Chi Minh City by clinical examination and autofluorescence test (2017)</li>
+            <li>The effect of nocturnal wear of dentures on sleep quality: a systematic review and meta-analysis (2017), Sleep &amp; Breathing, DOI: 10.1007/s11325-016-1369-1</li>
+            <li>The effect of nocturnal wear of complete dentures on sleep and oral health related quality of life: study protocol for an RCT (2014), Trials, DOI: 10.1186/1745-6215-15-358</li>
+            <li>Toluidine blue test and brush cytology in oral cancer diagnosis (2013), Vietnam Journal of Oncology, Vol.4, p.48-53</li>
+            <li>Oral brush cytology in the diagnosis of oral mucosa diseases (2013), Tạp chí Y học TP.HCM, 17(2):312-317</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -771,6 +852,46 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="research-direction" id="research-direction">
+    <div class="container">
+      <h2 class="section-title">Định hướng nghiên cứu</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <h3>Chương trình 1: Oral Medicine &amp; Oral Mucosal Diseases</h3>
+          <ul>
+            <li>Bệnh học niêm mạc miệng</li>
+            <li>Khô miệng</li>
+            <li>Lão hóa vùng miệng</li>
+            <li>Điều trị và dược lý học miệng</li>
+          </ul>
+        </div>
+        <div class="research-card">
+          <h3>Chương trình 2: AI-powered Precision Oral Diagnosis</h3>
+          <ul>
+            <li>AI hình ảnh</li>
+            <li>AI đa mô thức</li>
+            <li>Biomarker</li>
+            <li>Digital pathology</li>
+            <li>Clinical decision support</li>
+          </ul>
+        </div>
+        <div class="research-card">
+          <h3>Chương trình 3: Dental Education Quality &amp; Innovation</h3>
+          <ul>
+            <li>Competency-based medical education (CBME)</li>
+            <li>Entrustable Professional Activities (EPA)</li>
+            <li>Assessment &amp; Accreditation</li>
+            <li>Learning analytics</li>
+            <li>AI trong giáo dục nha khoa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="research-axis">
+        "Bệnh học niêm mạc miệng &ndash; AI &ndash; Y học chính xác" là trục nghiên cứu trung tâm
       </div>
     </div>
   </section>
