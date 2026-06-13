@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TS.BS. Nguyễn Phan Thế Huy — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --moss: #EDF1E6;
+    --moss-deep: #4A5D3A;
+    --moss-darker: #3A4A2C;
+    --navy: #1F2D4A;
+    --bronze: #B8860B;
+    --ink: #1A1A1A;
+    --line: rgba(74, 93, 58, 0.18);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    font-family: 'Inter', sans-serif;
+    background-color: var(--moss);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Playfair Display', serif;
+    color: var(--moss-darker);
+  }
+
+  .container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    padding: 80px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .avatar{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 28px rgba(58, 74, 44, 0.18);
+    flex-shrink: 0;
+  }
+
+  .header-text h1{
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .title-line{
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--moss-deep);
+    margin-bottom: 14px;
+  }
+
+  .contact-line{
+    font-size: 0.95rem;
+    color: #3a3a3a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .contact-line a{
+    color: var(--moss-deep);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .contact-line a:hover{
+    border-color: var(--moss-deep);
+  }
+
+  .header-cta{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .btn-sm{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 11px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-sm.primary{
+    background-color: var(--moss-deep);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(58, 74, 44, 0.22);
+  }
+
+  .btn-sm.primary:hover{
+    background-color: var(--moss-darker);
+    transform: translateY(-2px);
+  }
+
+  .btn-sm.secondary{
+    background-color: transparent;
+    color: var(--moss-deep);
+    border: 1.5px solid var(--moss-deep);
+  }
+
+  .btn-sm.secondary:hover{
+    background-color: var(--moss-deep);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* ===== SECTIONS ===== */
+  section{
+    padding: 64px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type{
+    border-bottom: none;
+  }
+
+  .section-title{
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    position: relative;
+    padding-bottom: 16px;
+  }
+
+  .section-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 3px;
+    background-color: var(--moss-deep);
+  }
+
+  .about p{
+    font-size: 1.08rem;
+    max-width: 760px;
+    color: #2a2a2a;
+  }
+
+  .about p + p{
+    margin-top: 18px;
+  }
+
+  /* ===== ACHIEVEMENTS ===== */
+  .achievements-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .achievement-card{
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(58, 74, 44, 0.08);
+    border: 1px solid var(--line);
+  }
+
+  .achievement-number{
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .achievement-card:nth-child(2) .achievement-number{
+    color: var(--bronze);
+  }
+
+  .achievement-label{
+    font-size: 0.98rem;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .achievement-booklist{
+    list-style: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    text-align: left;
+    font-size: 0.82rem;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .achievement-booklist li{
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .achievement-booklist li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--moss-deep);
+  }
+
+  /* ===== SKILLS ===== */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 40px;
+  }
+
+  .skill-item{
+    padding-left: 22px;
+    border-left: 3px solid var(--moss-deep);
+  }
+
+  .skill-item h3{
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .skill-item p{
+    font-size: 0.96rem;
+    color: #3a3a3a;
+  }
+
+  /* ===== CONTACT CTA ===== */
+  .contact-cta{
+    text-align: center;
+    padding: 72px 0 96px;
+  }
+
+  .contact-cta h2{
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+  }
+
+  .contact-cta p{
+    color: #3a3a3a;
+    margin-bottom: 32px;
+    font-size: 1.02rem;
+  }
+
+  .btn{
+    display: inline-block;
+    background-color: var(--moss-deep);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 40px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(58, 74, 44, 0.25);
+  }
+
+  .btn:hover{
+    background-color: var(--moss-darker);
+    transform: translateY(-2px);
+  }
+
+  footer{
+    text-align: center;
+    padding: 28px 0 40px;
+    font-size: 0.85rem;
+    color: #6a6a6a;
+  }
+
+  /* ===== NAVBAR ===== */
+  body{
+    padding-top: 60px;
+  }
+
+  .navbar{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background-color: rgba(237, 241, 230, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav-brand{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--moss-darker);
+    text-decoration: none;
+  }
+
+  .nav-links{
+    display: flex;
+    list-style: none;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a{
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover{
+    color: var(--moss-deep);
+  }
+
+  section[id], header[id]{
+    scroll-margin-top: 70px;
+  }
+
+  /* ===== PROJECTS ===== */
+  .projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card{
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 18px rgba(58, 74, 44, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(58, 74, 44, 0.2);
+  }
+
+  .project-banner{
+    height: 110px;
+    background: linear-gradient(135deg, var(--moss-deep), var(--moss-darker));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .project-banner{
+    transform: scale(1.07);
+  }
+
+  .project-banner span{
+    font-size: 2.4rem;
+  }
+
+  .project-body{
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  .project-body h3{
+    font-size: 1.18rem;
+    line-height: 1.4;
+  }
+
+  .project-time{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--moss-deep);
+  }
+
+  .project-desc{
+    font-size: 0.95rem;
+    color: #3a3a3a;
+  }
+
+  .project-results{
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-result{
+    flex: 1;
+    text-align: center;
+  }
+
+  .project-result .num{
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 1.55rem;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .project-result:nth-child(2) .num{
+    color: var(--bronze);
+  }
+
+  .project-result .label{
+    font-size: 0.76rem;
+    color: #555;
+    margin-top: 6px;
+    display: block;
+  }
+
+  .project-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-tag{
+    background-color: var(--moss);
+    color: var(--moss-darker);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+
+  .project-evidence{
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: -2px;
+  }
+
+  .project-evidence a{
+    color: var(--moss-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--moss-deep);
+  }
+
+  .project-evidence a:hover{
+    color: var(--moss-darker);
+  }
+
+  /* ===== SKILL BARS ===== */
+  .skill-bar-track{
+    height: 6px;
+    background-color: var(--line);
+    border-radius: 999px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill{
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background-color: var(--moss-deep);
+    transition: width 1.4s ease;
+  }
+
+  .skill-bar-fill.bronze{
+    background-color: var(--bronze);
+  }
+
+  .skill-bar-fill.in-view{
+    width: var(--level);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 720px){
+    .container{ padding: 0 22px; }
+
+    header{ padding: 56px 0 44px; }
+
+    .header-inner{
+      flex-direction: column;
+      text-align: center;
+      gap: 28px;
+    }
+
+    .contact-line{
+      justify-content: center;
+    }
+
+    .header-cta{
+      justify-content: center;
+    }
+
+    .header-text h1{ font-size: 2.1rem; }
+
+    section{ padding: 48px 0; }
+
+    .achievements-grid{
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .skills-grid{
+      grid-template-columns: 1fr;
+    }
+
+    .achievement-number{ font-size: 2.5rem; }
+
+    .nav-inner{
+      justify-content: center;
+      text-align: center;
+    }
+
+    .nav-links{
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .projects-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">Nguyễn Phan Thế Huy</a>
+      <ul class="nav-links">
+        <li><a href="#achievements">Thành tích</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="top">
+    <div class="container header-inner">
+      <img class="avatar" src="avatar.jpg" alt="Ảnh đại diện TS.BS. Nguyễn Phan Thế Huy">
+      <div class="header-text">
+        <h1>Nguyễn Phan Thế Huy</h1>
+        <p class="title-line">Tiến sĩ Bệnh học Miệng · Giảng viên, Bộ môn Bệnh học Miệng — Khoa Răng Hàm Mặt, Đại học Y Dược TP.HCM</p>
+        <div class="contact-line">
+          <a href="mailto:npthuy@ump.edu.vn">npthuy@ump.edu.vn</a>
+          <a href="https://orcid.org/0000-0002-5690-7651" target="_blank" rel="noopener">ORCID: 0000-0002-5690-7651</a>
+          <a href="https://www.researchgate.net/profile/Huy_Nguyen57" target="_blank" rel="noopener">ResearchGate</a>
+        </div>
+        <div class="header-cta">
+          <a class="btn-sm primary" href="mailto:npthuy@ump.edu.vn?subject=Trao%20đổi%20hợp%20tác">Liên hệ trao đổi</a>
+          <a class="btn-sm secondary" href="CV_science-English_update.docx" download>Tải CV đầy đủ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <h2 class="section-title">Thành tích nổi bật</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-number"><span class="count-up" data-target="13" data-suffix="+">0</span></div>
+          <div class="achievement-label">năm kinh nghiệm giảng dạy &amp; nghiên cứu trong lĩnh vực Bệnh học Miệng (từ 2012 đến nay)</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number"><span class="count-up" data-target="7" data-suffix="">0</span></div>
+          <div class="achievement-label">đầu sách / giáo trình đã xuất bản (Nhà xuất bản Y học), với vai trò đồng tác giả hoặc biên soạn</div>
+          <ul class="achievement-booklist">
+            <li>Sinh học phân tử Miệng và Hàm mặt – Tập 1 (2025)</li>
+            <li>Sinh học phân tử Miệng và Hàm mặt – Tập 2 (2025)</li>
+            <li>Trợ thủ nha khoa (2024)</li>
+            <li>Khám và chẩn đoán bệnh vùng miệng – hàm mặt (2024)</li>
+            <li>Chăm sóc răng miệng cho gia đình (2024)</li>
+            <li>Mô phỏng lâm sàng khám và chẩn đoán vùng miệng (2023)</li>
+            <li>Ergonomics in Dental Practice (2023)</li>
+          </ul>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number"><span class="count-up" data-target="11" data-suffix="+">0</span></div>
+          <div class="achievement-label">bài báo khoa học có chỉ số DOI, công bố trên các tạp chí trong nước &amp; quốc tế</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">Giới thiệu</h2>
+      <p>
+        Tôi là bác sĩ Răng Hàm Mặt, hoàn thành chương trình Tiến sĩ chuyên ngành Bệnh học Miệng tại Đại học Y Nha khoa Tokyo
+        với học bổng Chính phủ Nhật Bản (MEXT), và hiện giảng dạy, nghiên cứu tại Bộ môn Bệnh học Miệng, Khoa Răng Hàm Mặt,
+        Đại học Y Dược Thành phố Hồ Chí Minh. Hướng nghiên cứu chính của tôi tập trung vào bệnh học niêm mạc miệng, chẩn đoán
+        ung thư miệng và tổn thương tiền ung thư, cùng ứng dụng học sâu (deep learning) trong phân tích hình ảnh mô bệnh học
+        — một hướng đi tôi đã theo đuổi từ giai đoạn nghiên cứu sinh tại Nhật Bản đến nay.
+      </p>
+      <p>
+        Bên cạnh công tác giảng dạy và nghiên cứu, tôi tham gia biên soạn giáo trình, sách chuyên khảo cho chương trình đào
+        tạo sau đại học và đại học ngành Răng Hàm Mặt, đồng thời đóng vai trò biên tập và phiên dịch chuyên ngành cho các hội
+        nghị khoa học và tài liệu hướng dẫn quốc tế. Với nền tảng đào tạo tại Việt Nam, Canada, Pháp và Nhật Bản cùng khả năng
+        sử dụng nhiều ngôn ngữ, tôi có thể làm việc hiệu quả trong môi trường học thuật và lâm sàng đa quốc gia.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Dự án nổi bật</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-banner"><span>🦠</span></div>
+          <div class="project-body">
+            <div>
+              <h3>Nghiên cứu AI chẩn đoán loạn sản mô bệnh học niêm mạc lưỡi</h3>
+              <div class="project-time">10/2018 – 9/2022 · Tokyo Medical and Dental University, Nhật Bản</div>
+            </div>
+            <p class="project-desc">
+              Dự án nghiên cứu sinh Tiến sĩ với học bổng MEXT, tập trung ứng dụng deep learning để nhận diện các đặc điểm
+              mô bệnh học gợi ý loạn sản (dysplasia) trên ảnh giải phẫu bệnh niêm mạc lưỡi. Tôi là nghiên cứu sinh chính,
+              trực tiếp xây dựng dữ liệu ảnh, huấn luyện và đánh giá mô hình dưới sự hướng dẫn của Bộ môn Bệnh học Miệng.
+            </p>
+            <div class="project-results">
+              <div class="project-result">
+                <span class="num count-up" data-target="1" data-suffix="">0</span>
+                <span class="label">bài báo quốc tế (JOMSMP, 2022)</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="2" data-suffix="">0</span>
+                <span class="label">poster tại hội nghị Japanese Society of Pathology</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="4" data-suffix="">0</span>
+                <span class="label">năm nghiên cứu liên tục</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Deep Learning</span>
+              <span class="project-tag">Digital Pathology</span>
+              <span class="project-tag">Nghiên cứu khoa học</span>
+              <span class="project-tag">Tiếng Nhật</span>
+            </div>
+            <div class="project-evidence">
+              Nguồn: <a href="https://doi.org/10.1016/j.ajoms.2021.12.008" target="_blank" rel="noopener">DOI 10.1016/j.ajoms.2021.12.008</a>, J. Oral Maxillofac. Surg. Med. Pathol. 2022;34(4):514-522
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-banner"><span>💡</span></div>
+          <div class="project-body">
+            <div>
+              <h3>Sàng lọc tổn thương niêm mạc miệng bằng công nghệ tự phát huỳnh quang VELscope</h3>
+              <div class="project-time">10/2015 – 1/2017 · Hóc Môn, Đồng Nai, Long An · Công bố 2018, Tạp chí Y học TP.HCM</div>
+            </div>
+            <p class="project-desc">
+              Nghiên cứu sàng lọc tổn thương niêm mạc miệng ở nhóm phụ nữ có thói quen nhai trầu — nhóm nguy cơ cao ung thư
+              miệng — bằng khám lâm sàng thông thường kết hợp thiết bị tự phát huỳnh quang VELscope™. Tôi tham gia thiết kế
+              nghiên cứu, trực tiếp khám sàng lọc và phân tích đặc điểm tự phát huỳnh quang của từng loại tổn thương.
+            </p>
+            <div class="project-results">
+              <div class="project-result">
+                <span class="num count-up" data-target="63" data-suffix="">0</span>
+                <span class="label">phụ nữ nhai trầu được khám sàng lọc</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="68" data-suffix="%">0</span>
+                <span class="label">tổn thương niêm mạc miệng phát hiện qua khám lâm sàng + VELscope</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="3" data-suffix="">0</span>
+                <span class="label">bài báo khoa học liên quan (2017–2018)</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">VELscope / Autofluorescence</span>
+              <span class="project-tag">Sàng lọc ung thư miệng</span>
+              <span class="project-tag">Nghiên cứu cộng đồng</span>
+              <span class="project-tag">Công bố khoa học</span>
+            </div>
+            <div class="project-evidence">
+              Nguồn: Tạp chí Y học TP.HCM, 2018;22(2):90-95
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-banner"><span>📚</span></div>
+          <div class="project-body">
+            <div>
+              <h3>Biên soạn giáo trình "Sinh học phân tử Miệng và Hàm mặt" (Tập 1 &amp; 2)</h3>
+              <div class="project-time">2025 · Nhà xuất bản Y học</div>
+            </div>
+            <p class="project-desc">
+              Giáo trình sau đại học dành cho học viên Răng Hàm Mặt, cung cấp nền tảng lý thuyết và thực hành nghiên cứu từ
+              cơ bản đến các kỹ thuật hiện đại (PCR, giải trình tự gen, hóa mô miễn dịch, tin sinh học cơ bản). Tôi tham gia
+              với vai trò đồng tác giả, biên soạn nội dung chuyên môn và hệ thống câu hỏi tự lượng giá.
+            </p>
+            <div class="project-results">
+              <div class="project-result">
+                <span class="num count-up" data-target="2" data-suffix="">0</span>
+                <span class="label">tập giáo trình đã xuất bản</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="25" data-suffix="">0</span>
+                <span class="label">bài học (Tập 1)</span>
+              </div>
+              <div class="project-result">
+                <span class="num count-up" data-target="15" data-suffix="">0</span>
+                <span class="label">chương (Tập 2)</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Biên soạn giáo trình</span>
+              <span class="project-tag">Sinh học phân tử</span>
+              <span class="project-tag">Giảng dạy sau đại học</span>
+            </div>
+            <div class="project-evidence">
+              Nguồn: ISBN 978-604-66-7787-1 (Tập 1) &amp; 978-604-66-7788-8 (Tập 2), Nhà xuất bản Y học
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Kỹ năng chính</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h3>Bệnh học &amp; chẩn đoán niêm mạc miệng</h3>
+          <p>Chẩn đoán ung thư miệng, tổn thương tiền ung thư (OPMD), lichen phẳng, khô miệng và các bệnh lý niêm mạc miệng khác.</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill" style="--level: 95%"></span></div>
+        </div>
+        <div class="skill-item">
+          <h3>AI &amp; chẩn đoán hình ảnh mô bệnh học</h3>
+          <p>Ứng dụng deep learning trong nhận diện đặc điểm mô bệnh học loạn sản (dysplasia) trên ảnh giải phẫu bệnh, với kinh nghiệm thực hiện tại Nhật Bản.</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill bronze" style="--level: 85%"></span></div>
+        </div>
+        <div class="skill-item">
+          <h3>Giảng dạy &amp; biên soạn giáo trình</h3>
+          <p>Tham gia biên soạn giáo trình, sách chuyên khảo cho đào tạo đại học và sau đại học ngành Răng Hàm Mặt; hỗ trợ chuyển đổi sang đào tạo dựa trên năng lực (CBME).</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill" style="--level: 90%"></span></div>
+        </div>
+        <div class="skill-item">
+          <h3>Nghiên cứu khoa học &amp; công bố quốc tế</h3>
+          <p>Thiết kế nghiên cứu, viết và công bố bài báo trên các tạp chí trong nước và quốc tế, trình bày báo cáo tại hội nghị khoa học chuyên ngành.</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill bronze" style="--level: 90%"></span></div>
+        </div>
+        <div class="skill-item">
+          <h3>Ngoại ngữ chuyên ngành</h3>
+          <p>Việt, Pháp, Anh, Tây Ban Nha và Nhật — đủ năng lực biên tập, phiên dịch tài liệu y khoa và làm việc trong môi trường học thuật đa quốc gia.</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill" style="--level: 80%"></span></div>
+        </div>
+        <div class="skill-item">
+          <h3>Thực hành lâm sàng nha khoa</h3>
+          <p>Kinh nghiệm điều trị tại các phòng khám và bệnh viện chuyên khoa Răng Hàm Mặt, song song với công tác giảng dạy và nghiên cứu.</p>
+          <div class="skill-bar-track"><span class="skill-bar-fill bronze" style="--level: 85%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta" id="contact">
+    <div class="container">
+      <h2>Liên hệ hợp tác</h2>
+      <p>Sẵn sàng trao đổi về hợp tác nghiên cứu, giảng dạy hoặc biên soạn tài liệu chuyên ngành Răng Hàm Mặt.</p>
+      <div class="header-cta" style="justify-content: center;">
+        <a class="btn" href="mailto:npthuy@ump.edu.vn?subject=Trao%20đổi%20hợp%20tác">Liên hệ qua Email</a>
+        <a class="btn-sm secondary" href="CV_science-English_update.docx" download>Tải CV đầy đủ</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Nguyễn Phan Thế Huy — Khoa Răng Hàm Mặt, Đại học Y Dược TP.HCM
+    </div>
+  </footer>
+
+  <script>
+    // Animate numbers counting up from 0 when they scroll into view
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * target) + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.count-up').forEach((el) => countObserver.observe(el));
+
+    // Fill skill proficiency bars when they scroll into view
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.skill-bar-fill').forEach((el) => barObserver.observe(el));
+  </script>
+
+</body>
+</html>
