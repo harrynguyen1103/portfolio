@@ -306,6 +306,92 @@
     font-weight: 600;
   }
 
+  .research-table-wrap{
+    margin-top: 36px;
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(58, 74, 44, 0.08);
+    border: 1px solid var(--line);
+  }
+
+  .research-table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    min-width: 720px;
+  }
+
+  .research-table th,
+  .research-table td{
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.55;
+  }
+
+  .research-table thead th{
+    background-color: var(--moss-deep);
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+
+  .research-table tbody tr:last-child td{
+    border-bottom: none;
+  }
+
+  .research-table tbody tr:nth-child(even){
+    background-color: rgba(74, 93, 58, 0.04);
+  }
+
+  .research-table td:first-child{
+    font-weight: 600;
+    color: var(--moss-darker);
+    width: 22%;
+  }
+
+  .research-table ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .research-table li{
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .research-table li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--moss-deep);
+  }
+
+  .research-table a{
+    color: var(--moss-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--moss-deep);
+  }
+
+  .research-table a:hover{
+    color: var(--moss-darker);
+  }
+
+  .status-progress{
+    display: inline-block;
+    color: var(--bronze);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid var(--bronze);
+    border-radius: 999px;
+    padding: 1px 10px;
+  }
+
   @media (max-width: 860px){
     .research-grid{
       grid-template-columns: 1fr;
@@ -972,6 +1058,144 @@
       </div>
       <div class="research-axis">
         "Bệnh học niêm mạc miệng &ndash; AI &ndash; Y học chính xác" là trục nghiên cứu trung tâm
+      </div>
+
+      <div class="research-table-wrap">
+        <table class="research-table">
+          <thead>
+            <tr>
+              <th>Định hướng nghiên cứu</th>
+              <th>Chủ đề nghiên cứu cụ thể</th>
+              <th>Công bố liên quan / Tình trạng thực hiện</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Bệnh học niêm mạc miệng &amp; y học miệng lâm sàng</td>
+              <td>
+                <ul>
+                  <li>Oral cancer (OSCC) &amp; OPMDs</li>
+                  <li>Oral lichen planus</li>
+                  <li>Khô miệng (xerostomia)</li>
+                  <li>Bệnh niêm mạc liên quan thuốc, bệnh tự miễn niêm mạc miệng</li>
+                  <li>Rối loạn thái dương hàm (TMD)</li>
+                  <li>U &amp; bệnh lý tuyến nước bọt</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Sách: "Oral and Maxillofacial Molecular Biology" tập 1 &amp; 2; "Khám và chẩn đoán bệnh vùng miệng-hàm mặt" (2024); "Mô phỏng lâm sàng khám và chẩn đoán vùng miệng" (2023); "The Science of Sea Salt" – chương Oral Cancer (2022)</li>
+                  <li><a href="https://doi.org/10.1016/j.ajoms.2021.12.008" target="_blank" rel="noopener">Deep-learning application for identifying histological features of epithelial dysplasia of tongue (2022)</a></li>
+                  <li><a href="https://yhoctphcm.ump.edu.vn/index.php?Content=ChiTietBai&amp;idBai=16040" target="_blank" rel="noopener">Autofluorescence features of oral mucosa lesions associated with betel chewing (2018)</a></li>
+                  <li>Evaluation of efficacy of tissue autofluorescence imaging in the diagnosis of oral cancer (2017)</li>
+                  <li>Detection of oral mucosa lesions among high-risk groups in HCMC (2017)</li>
+                  <li>Toluidine blue test and brush cytology in oral cancer diagnosis (2013)</li>
+                  <li><a href="https://yhoctphcm.ump.edu.vn/index.php?Content=ChiTietBai&amp;idBai=9797" target="_blank" rel="noopener">Oral brush cytology in the diagnosis of oral mucosa diseases (2013)</a></li>
+                  <li><a href="https://doi.org/10.32508/stdjhs.v2i2.471" target="_blank" rel="noopener">Stepwise approach in the management of oral lichen planus (2021)</a></li>
+                  <li><a href="https://doi.org/10.51298/vmj.v547i1.12904" target="_blank" rel="noopener">Value of ultrasound-guided fine needle aspiration in the diagnosis of parotid gland tumors (2025)</a></li>
+                  <li>Combination of jaw exercise and stabilization splint therapy for TMD (2025)</li>
+                  <li><span class="status-progress">Đang thực hiện</span> — Chuyển ngữ bộ câu hỏi DC/TMD (đề tài cấp Bộ)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>2. AI &amp; chẩn đoán đa mô thức trong bệnh lý miệng-hàm-mặt</td>
+              <td>
+                <ul>
+                  <li>AI nhận diện tổn thương niêm mạc miệng, OPMD từ ảnh lâm sàng</li>
+                  <li>AI trên CBCT &amp; X-quang (ameloblastoma, tổn thương xương hàm)</li>
+                  <li>AI &amp; digital pathology</li>
+                  <li>Multimodal AI (ảnh + bệnh sử + mô học + xét nghiệm)</li>
+                  <li>Large Language Models trong nha khoa</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://doi.org/10.1016/j.ajoms.2021.12.008" target="_blank" rel="noopener">Deep-learning application for identifying histological features of epithelial dysplasia of tongue (2022)</a></li>
+                  <li><span class="status-progress">Đang thực hiện</span> — AI chẩn đoán lichen phẳng (đề tài ThS)</li>
+                  <li><span class="status-progress">Đang thực hiện</span> — AI chẩn đoán bệnh lý niêm mạc miệng đa mô thức (đề tài NCS)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>3. Sức khỏe toàn thân, lão hóa &amp; chức năng vùng miệng</td>
+              <td>
+                <ul>
+                  <li>Oral frailty &amp; sarcopenia, chức năng nhai-nuốt</li>
+                  <li>Khô miệng ở người cao tuổi</li>
+                  <li>Nha chu &amp; bệnh toàn thân (đái tháo đường, tim mạch, đa bệnh lý)</li>
+                  <li>Chăm sóc nha khoa cho người cao tuổi</li>
+                  <li>Chất lượng cuộc sống liên quan sức khỏe miệng</li>
+                  <li>Geroscience &amp; nha khoa</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Sách: "Khám và chẩn đoán bệnh vùng miệng-hàm mặt" (2024); "Chăm sóc răng miệng" (2025); "Dental Assistant – Trợ thủ nha khoa"; "Cả nhà chăm răng" (2024)</li>
+                  <li><a href="https://doi.org/10.1007/s11325-016-1369-1" target="_blank" rel="noopener">The effect of nocturnal wear of dentures on sleep quality: a systematic review and meta-analysis (2017)</a></li>
+                  <li><a href="https://doi.org/10.1186/1745-6215-15-358" target="_blank" rel="noopener">The effect of nocturnal wear of complete dentures on sleep and oral health related quality of life: study protocol for an RCT (2014)</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>4. Dược lý học miệng &amp; phát triển liệu pháp điều trị mới</td>
+              <td>
+                <ul>
+                  <li>Corticosteroid trong bệnh niêm mạc miệng</li>
+                  <li>Kháng sinh trong nha khoa, kháng kháng sinh &amp; antimicrobial stewardship</li>
+                  <li>Chất kháng khuẩn từ dược liệu</li>
+                  <li>Điều trị khô miệng</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://doi.org/10.52163/yhc.v66iCD1.1978" target="_blank" rel="noopener">Evaluating the effectiveness of improving prescription by using the antimicrobial prescribing self-audit tool in dentistry (2025)</a></li>
+                  <li><a href="https://doi.org/10.32508/stdjhs.v3i2.541" target="_blank" rel="noopener">Antibiotics prescribed by dentists in Ho Chi Minh City, Vietnam (2022)</a></li>
+                  <li><a href="https://doi.org/10.32508/stdjhs.v2i1.460" target="_blank" rel="noopener">Updating recommendations for prescribing antibiotics in dental practice (2021)</a></li>
+                  <li><span class="status-progress">Đang thực hiện</span> — Triamcinolone và oral lichen planus (đề tài ThS)</li>
+                  <li><span class="status-progress">Đang thực hiện</span> — Trà xanh và kháng khuẩn (đề tài ThS)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>5. Sinh học phân tử &amp; y học chính xác trong Răng Hàm Mặt</td>
+              <td>
+                <ul>
+                  <li>Biomarker trong bệnh niêm mạc miệng &amp; khô miệng, OPMDs</li>
+                  <li>Gene expression profiling &amp; vi sinh vật học phân tử</li>
+                  <li>Omics trong nha khoa</li>
+                  <li>Precision oral medicine &amp; mô hình dự báo tiến triển bệnh</li>
+                  <li>Digital pathology kết hợp molecular pathology</li>
+                  <li>AI-integrated precision diagnosis</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Sách: "Oral and Maxillofacial Molecular Biology" tập 1 &amp; 2</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>6. Giáo dục nha khoa dựa trên năng lực &amp; đảm bảo chất lượng quốc tế</td>
+              <td>
+                <ul>
+                  <li>Competency-based dental education (CBDE) &amp; Entrustable Professional Activities (EPA)</li>
+                  <li>Xây dựng blueprint lượng giá &amp; OSCE</li>
+                  <li>Chuẩn đầu ra &amp; chương trình tích hợp, curriculum mapping</li>
+                  <li>Learning analytics &amp; AI trong giảng dạy, lượng giá</li>
+                  <li>Kiểm định chất lượng: AUN-QA, WFME, ADEE</li>
+                  <li>National licensing examination &amp; continuous quality improvement (CQI)</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Sách chuyên khảo: "Các vấn đề thiết yếu trong chương trình đào tạo bác sĩ Răng Hàm Mặt" (2026)</li>
+                  <li>Sách: "Thuật ngữ Răng Hàm Mặt Việt-Anh" (2026); "Chăm sóc răng miệng" (2025); "Dental Assistant – Trợ thủ nha khoa"; "Cả nhà chăm răng" (2024); "Khám và chẩn đoán bệnh vùng miệng-hàm mặt" (2024); "Mô phỏng lâm sàng khám và chẩn đoán vùng miệng" (2023); "Công thái học và hợp lý hoá lao động trong thực hành RHM" (2023)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
